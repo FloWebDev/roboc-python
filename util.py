@@ -12,7 +12,7 @@ but_du_jeu = 'Le but du jeu : Tu es un robot (X) et tu dois sortir du labyrinthe
 
 def afficher_consignes():
     print("Les commandes autorisées sont :\n- n(x) (Nord),\n- e(x) (Est),\n- s(x) (Sud),\n- o(x) (Ouest),\n- q (pour quitter le jeu)")
-    print("Un déplacement peut contenir un second paramètre (x) (facultatif) pour le nombre de cases à avancer compris entre 1 et 9 (1 par défaut).")
+    print("Un déplacement peut contenir un second paramètre (x) (facultatif) pour le nombre de cases à avancer.")
 
 def verif_input_saisi(commande):
     """Permet de vérifier que la combinaison de touche saisie
@@ -25,7 +25,7 @@ def verif_input_saisi(commande):
     except:
         verif = False
     else:
-        if len(commande) != 1 and len(commande) != 2:
+        if len(commande) == 0:
             verif = False
         elif len(commande) == 1:
             if commande in commande_list:
@@ -34,12 +34,12 @@ def verif_input_saisi(commande):
                 verif = False
         else:
             try:
-                int(commande[1])
+                int(commande[1:])
             except:
                 verif = False
             else:
                 if commande[0] in commande_list and commande[0] != 'Q' \
-                    and int(commande[1]) > 0 and int(commande[1]) < 10:
+                    and int(commande[1:]) > 0:
                     verif = True
                 else:
                     verif = False

@@ -49,9 +49,9 @@ class Labyrinthe:
         et prévenir lorsque le robot a trouvé la sortie."""
         
         commande = commande.upper()
-        if(len(commande) == 2):
+        if(len(commande) > 1):
             axe = str(commande[0])
-            nbr = int(commande[1])
+            nbr = int(commande[1:])
         else:
             axe = str(commande[0])
             nbr = 1
