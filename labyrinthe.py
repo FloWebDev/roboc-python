@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.8
+#!/usr/bin/python3.8
 # -*- coding: utf-8 -*-
 
 """Ce module contient la classe Labyrinthe."""
